@@ -4,7 +4,7 @@
 
 # nonebot-plugin-make-choice
 
-[NoneBot2](https://github.com/nonebot/nonebot2) 测的随机选择插件，移植自 HoshinoBot
+[NoneBot2](https://github.com/nonebot/nonebot2) 侧的随机选择插件，移植自 HoshinoBot
 
 </div>
 
