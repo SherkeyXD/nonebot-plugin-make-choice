@@ -14,11 +14,12 @@ global_config = get_driver().config
 config = ChoiceConfig.parse_obj(global_config)
 
 __plugin_meta = PluginMetadata(
-    name="nonebot-plugin-make-choice",
+    name="选择困难症",
     description="选择困难症？Bot帮你选！",
     usage="发送选xx选xx即可触发",
     type="application",
     homepage="https://github.com/SherkeyXD/nonebot-plugin-make-choice",
+    supported_adapters={"~onebot.v11"},
     config=ChoiceConfig()
 )
 
