@@ -13,7 +13,7 @@ from .config import ChoiceConfig
 global_config = get_driver().config
 config = ChoiceConfig.parse_obj(global_config)
 
-__plugin_meta = PluginMetadata(
+__plugin_meta__ = PluginMetadata(
     name="选择困难症",
     description="选择困难症？Bot帮你选！",
     usage="发送选xx选xx即可触发",
