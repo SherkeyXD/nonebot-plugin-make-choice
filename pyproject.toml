@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-make-choice"
-version = "1.0.3"
+version = "1.0.4"
 description = "选择困难症？Bot帮你选！"
 authors = ["SherkeyXD <253294679@qq.com>"]
 license = "MIT"
