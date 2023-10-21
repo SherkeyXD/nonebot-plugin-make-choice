@@ -8,10 +8,10 @@ from nonebot.plugin import PluginMetadata
 
 from typing import Any, Annotated
 
-from .config import ChoiceConfig
+from .config import *
 
 global_config = get_driver().config
-config = ChoiceConfig.parse_obj(global_config)
+config = Config.parse_obj(global_config)
 
 __plugin_meta__ = PluginMetadata(
     name="选择困难症",
@@ -20,7 +20,7 @@ __plugin_meta__ = PluginMetadata(
     type="application",
     homepage="https://github.com/SherkeyXD/nonebot-plugin-make-choice",
     supported_adapters={"~onebot.v11"},
-    config=ChoiceConfig()
+    config=Config()
 )
 
 choice = on_regex(r'^[选要](\S*)[选要](\S*)', priority=20, block=True)
