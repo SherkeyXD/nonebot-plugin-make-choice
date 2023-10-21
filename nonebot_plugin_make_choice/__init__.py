@@ -20,7 +20,7 @@ __plugin_meta__ = PluginMetadata(
     type="application",
     homepage="https://github.com/SherkeyXD/nonebot-plugin-make-choice",
     supported_adapters={"~onebot.v11"},
-    config=Config()
+    config=Config
 )
 
 choice = on_regex(r'^[选要](\S*)[选要](\S*)', priority=20, block=True)
