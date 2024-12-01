@@ -1,17 +1,17 @@
 import random
-from nonebot import get_driver
+from typing import Annotated, Any
+
+import nonebot
+from nonebot import get_plugin_config
 from nonebot.adapters import Event
 from nonebot.adapters.onebot.v11 import MessageSegment
 from nonebot.params import RegexGroup
-from nonebot.plugin import on_regex
-from nonebot.plugin import PluginMetadata
+from nonebot.plugin import PluginMetadata, on_regex
 
-from typing import Any, Annotated
+from .config import Config
 
-from .config import *
-
-global_config = get_driver().config
-config = Config.parse_obj(global_config)
+global_config = nonebot.get_driver().config
+plugin_config = get_plugin_config(Config)
 
 __plugin_meta__ = PluginMetadata(
     name="选择困难症",
@@ -20,13 +20,17 @@ __plugin_meta__ = PluginMetadata(
     type="application",
     homepage="https://github.com/SherkeyXD/nonebot-plugin-make-choice",
     supported_adapters={"~onebot.v11"},
-    config=Config
+    config=Config,
 )
 
-choice = on_regex(r'^[选要](\S*)[选要](\S*)', priority=20, block=True)
+choice = on_regex(r"^[选要](\S*)[选要](\S*)", priority=20, block=True)
+
+
 @choice.handle()
-async def make_choice(event : Event, match_group: Annotated[tuple[Any, ...], RegexGroup()]):
+async def make_choice(event: Event, match_group: Annotated[tuple[Any, ...], RegexGroup()]):
     random_choice = random.choice(match_group)
-    if random.random() < config.choose_both_chance:
+    if random.random() < plugin_config.choose_both_chance:
         random_choice = "我全都要！"
-    await choice.finish(MessageSegment.reply(id_=event.message_id) + MessageSegment.text(f"建议您选择：\n{random_choice}"))
+    await choice.finish(
+        MessageSegment.reply(id_=event.message_id) + MessageSegment.text(f"建议您选择：\n{random_choice}")
+    )
