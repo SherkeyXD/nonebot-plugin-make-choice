@@ -1,6 +1,6 @@
 <div align="center">
     <!--<img width="200" src="logo.png" alt="logo"></br>-->
-<img src="https://socialify.git.ci/SherkeyXD/nonebot-plugin-diss-anybody/image?font=Raleway&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FA-kirami%2Fnonebot-plugin-template%2Fresources%2Fnbp_logo.png&name=1&owner=1&pattern=Floating%20Cogs&pulls=1&stargazers=1&theme=Auto" alt="nonebot-plugin-diss-anybody" width="640" height="320" />
+<img src="logo.svg" alt="nonebot-plugin-make-choice" width="300" />
 
 # nonebot-plugin-make-choice
 
